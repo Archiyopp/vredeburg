@@ -5,21 +5,25 @@ module.exports = {
     content: ['./src/**/*.njk', './src/**/*.svg'],
     layers: ['components', 'utilities'],
     options: {
-      safelist: ['header-shadow', '-translate-y-full', 'hidden']
-    }
+      safelist: ['header-shadow', '-translate-y-full', 'hidden'],
+    },
   },
   theme: {
     screens: {
       sm: '576px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
     },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.purple,
+      cyan: colors.cyan,
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -29,33 +33,31 @@ module.exports = {
         600: '#718096',
         700: '#4a5568',
         800: '#2d3748',
-        900: '#1a202c'
+        900: '#1a202c',
       },
-      teal: colors.teal
+      teal: colors.teal,
     },
     extend: {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            'h1': {
-              fontWeight: '700'
+            h1: {
+              fontWeight: '700',
             },
-            'blockquote': {
+            blockquote: {
               fontWeight: 'normal',
-              color: theme('colors.gray.700')
-            },  
+              color: theme('colors.gray.700'),
+            },
             'blockquote p:first-of-type::before': {
-              content: ''
+              content: '',
             },
             'blockquote p:last-of-type::after': {
-              content: ''
-            }
-          }
-        }
-      })
+              content: '',
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ]
+  plugins: [require('@tailwindcss/typography')],
 };
